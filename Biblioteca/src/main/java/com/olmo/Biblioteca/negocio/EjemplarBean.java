@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -32,7 +33,7 @@ public class EjemplarBean {
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private LibroBean libro;
 	
-	@ManyToMany(cascade= CascadeType.MERGE)
+	@ManyToMany(cascade= CascadeType.ALL)
 	List<UsuarioBean> usuarios = new ArrayList<UsuarioBean>();
 
 	public long getIdEjemplar() {

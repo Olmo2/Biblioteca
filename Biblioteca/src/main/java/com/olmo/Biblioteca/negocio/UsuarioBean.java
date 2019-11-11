@@ -25,10 +25,10 @@ public class UsuarioBean {
 	@Column
 	private long idUsusario;
 
-	@Column(name="usuario")
+	@Column(name="nombre")
 	private String nombre;
 	
-	@ManyToMany(mappedBy="usuarios",cascade = CascadeType.MERGE)
+	@ManyToMany(mappedBy="usuarios",cascade = CascadeType.ALL)
 	List<EjemplarBean> ejemplares = new ArrayList<EjemplarBean>();
 	
 	public void addEjemplar(EjemplarBean ejemplar) {

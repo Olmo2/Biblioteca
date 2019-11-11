@@ -41,7 +41,7 @@ public class LibroBean {
 	@ManyToMany(mappedBy="libros",cascade=CascadeType.MERGE)
 	List<AutorBean> autores = new ArrayList<AutorBean>();
 	
-	private void addAutor(AutorBean autor) {
+	public void addAutor(AutorBean autor) {
 		
 		if(!autores.contains(autor)) {
 			
@@ -60,7 +60,7 @@ public class LibroBean {
 	@OneToMany(mappedBy="libro")
 	List<EjemplarBean> ejemplares = new ArrayList<EjemplarBean>();
 	
-	private void addEjemplar(EjemplarBean ejemplar) {
+	public void addEjemplar(EjemplarBean ejemplar) {
 		
 		if(!ejemplares.contains(ejemplar)) {
 			

@@ -1,5 +1,9 @@
 package com.olmo.Biblioteca.inicio;
 
+import com.olmo.Biblioteca.modelo.Autor.CreateAutor;
+import com.olmo.Biblioteca.modelo.Ejemplar.CreateEjemplar;
+import com.olmo.Biblioteca.modelo.Libro.CreateLibro;
+import com.olmo.Biblioteca.modelo.Usuario.CreateUsuario;
 import com.olmo.Biblioteca.negocio.*;
 
 public class Start {
@@ -56,11 +60,109 @@ public class Start {
 		EjemplarBean hp31 = new EjemplarBean();
 		hp31.setLoc("Biblioteca El Fontán");
 		
-		EjemplarBean c1 = new EjemplarBean();
-		c1.setLoc("Biblioteca El Fontán");
+		EjemplarBean q1 = new EjemplarBean();
+		q1.setLoc("Biblioteca El Fontán");
 		
 		EjemplarBean a1 = new EjemplarBean();
 		a1.setLoc("Biblioteca El Fontán");
+		
+		
+		
+		//Luego metodos Add
+		UsuarioBean paco = new UsuarioBean();
+		paco.setNombre("Paco");
+		
+		UsuarioBean olmo = new UsuarioBean();
+		olmo.setNombre("Olmo");
+		
+		UsuarioBean laura = new UsuarioBean();
+		laura.setNombre("Laura");
+		
+		
+//		Ejemplar_Usuario prestamo = new Ejemplar_Usuario();
+//		prestamo.setFechaPrestamo("Cojones");
+//		prestamo.setFechaDevolucion("Negros");
+		
+		
+		/*
+		 * **************************************************
+		 * A Ñ A D I E N D O    I N F O R M A C I Ó N
+		 * **************************************************
+		 */
+		
+		quijote.addAutor(cervantes);
+		harrypotter1.addAutor(jkrowling);
+		harrypotter2.addAutor(jkrowling);
+		harrypotter3.addAutor(jkrowling);
+		autoestopista.addAutor(douglas);
+		
+		
+		quijote.addEjemplar(q1);
+		harrypotter1.addEjemplar(hp11);
+		harrypotter1.addEjemplar(hp12);
+		harrypotter1.addEjemplar(hp13);
+		harrypotter2.addEjemplar(hp21);
+		harrypotter3.addEjemplar(hp31);
+		autoestopista.addEjemplar(a1);
+		
+		paco.addEjemplar(hp11);
+		paco.addEjemplar(hp31);
+		olmo.addEjemplar(hp21);
+		laura.addEjemplar(a1);
+		laura.addEjemplar(q1);
+//		
+		
+		
+		
+
+		/*
+		 * **************************************************
+		 * P E R S I S T I E N D O    L O S     D A T O S
+		 * **************************************************
+		 */
+		
+		CreateLibro createLibro = new CreateLibro();
+		createLibro.create(autoestopista);
+		createLibro.create(quijote);
+		createLibro.create(harrypotter1);
+		createLibro.create(harrypotter2);
+		createLibro.create(harrypotter3);
+		
+		CreateAutor createAutor = new CreateAutor();
+		createAutor.create(cervantes);
+		createAutor.create(douglas);
+		createAutor.create(jkrowling);
+		
+//		CreateEjemplares_Usuarios createPrestamo = new CreateEjemplares_Usuarios();
+//		createPrestamo.create(prestamo);
+		
+		
+//		CreateEjemplar createEjemplar = new CreateEjemplar();
+//		createEjemplar.create(a1);
+//		createEjemplar.create(q1);
+//		createEjemplar.create(hp31);
+//		createEjemplar.create(hp21);
+//		createEjemplar.create(hp13);
+//		createEjemplar.create(hp12);
+//		createEjemplar.create(hp11);
+//		
+		CreateUsuario createUsuario = new CreateUsuario();
+		createUsuario.create(laura);
+		createUsuario.create(olmo);
+		createUsuario.create(paco);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
