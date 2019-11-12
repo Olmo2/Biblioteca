@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -28,24 +29,37 @@ public class UsuarioBean {
 	@Column(name="nombre")
 	private String nombre;
 	
-	@ManyToMany(mappedBy="usuarios",cascade = CascadeType.ALL)
-	List<EjemplarBean> ejemplares = new ArrayList<EjemplarBean>();
+	@OneToMany(mappedBy="ejemplar")
 	
-	public void addEjemplar(EjemplarBean ejemplar) {
-
-		if (!ejemplares.contains(ejemplar)) {
-
-			ejemplares.add(ejemplar);
-
-			// decirle al coche que añada este concesionario
-			List<UsuarioBean> usuarios = ejemplar.getUsuarios();
-			if (!usuarios.contains(this)) {
-
-				usuarios.add(this);
-			}
+	List<PrestamoBean> prestamos =new ArrayList<PrestamoBean>();
+	
+public void addPrestamo(PrestamoBean prestamo) {
 		
+		if(!prestamos.contains(prestamo)) {
+			
+			prestamos.add(prestamo);
+			prestamo.setUsuario(this);
 		}
 	}
+//	
+//	@ManyToMany(mappedBy="usuarios",cascade = CascadeType.ALL)
+//	List<EjemplarBean> ejemplares = new ArrayList<EjemplarBean>();
+//	
+//	public void addEjemplar(EjemplarBean ejemplar) {
+//
+//		if (!ejemplares.contains(ejemplar)) {
+//
+//			ejemplares.add(ejemplar);
+//
+//			// decirle al coche que añada este concesionario
+//			List<UsuarioBean> usuarios = ejemplar.getUsuarios();
+//			if (!usuarios.contains(this)) {
+//
+//				usuarios.add(this);
+//			}
+//		
+//		}
+//	}
 
 	public long getIdUsusario() {
 		return idUsusario;
@@ -63,13 +77,13 @@ public class UsuarioBean {
 		this.nombre = nombre;
 	}
 
-	public List<EjemplarBean> getEjemplares() {
-		return ejemplares;
-	}
-
-	public void setEjemplares(List<EjemplarBean> ejemplares) {
-		this.ejemplares = ejemplares;
-	}
+//	public List<EjemplarBean> getEjemplares() {
+//		return ejemplares;
+//	}
+//
+//	public void setEjemplares(List<EjemplarBean> ejemplares) {
+//		this.ejemplares = ejemplares;
+//	}
 	
 	
 }

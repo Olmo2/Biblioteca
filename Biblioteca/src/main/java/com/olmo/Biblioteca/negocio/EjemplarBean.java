@@ -14,6 +14,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,8 +34,19 @@ public class EjemplarBean {
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private LibroBean libro;
 	
-	@ManyToMany(cascade= CascadeType.ALL)
-	List<UsuarioBean> usuarios = new ArrayList<UsuarioBean>();
+	@OneToMany(mappedBy="ejemplar")
+	List<PrestamoBean> prestamos = new ArrayList<PrestamoBean>();
+	
+public void addPrestamo(PrestamoBean prestamo) {
+		
+		if(!prestamos.contains(prestamo)) {
+			
+			prestamos.add(prestamo);
+			prestamo.setEjemplar(this);
+		}
+	}
+//	@ManyToMany(cascade= CascadeType.ALL)
+//	List<UsuarioBean> usuarios = new ArrayList<UsuarioBean>();
 
 	public long getIdEjemplar() {
 		return idEjemplar;
@@ -60,13 +72,13 @@ public class EjemplarBean {
 		this.libro = libro;
 	}
 
-	public List<UsuarioBean> getUsuarios() {
-		return usuarios;
-	}
-
-	public void setUsuarios(List<UsuarioBean> usuarios) {
-		this.usuarios = usuarios;
-	}
+//	public List<UsuarioBean> getUsuarios() {
+//		return usuarios;
+//	}
+//
+//	public void setUsuarios(List<UsuarioBean> usuarios) {
+//		this.usuarios = usuarios;
+//	}
 	
 	
 	

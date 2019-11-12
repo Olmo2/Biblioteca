@@ -3,6 +3,7 @@ package com.olmo.Biblioteca.inicio;
 import com.olmo.Biblioteca.modelo.Autor.CreateAutor;
 import com.olmo.Biblioteca.modelo.Ejemplar.CreateEjemplar;
 import com.olmo.Biblioteca.modelo.Libro.CreateLibro;
+import com.olmo.Biblioteca.modelo.Prestamo.CreatePrestamo;
 import com.olmo.Biblioteca.modelo.Usuario.CreateUsuario;
 import com.olmo.Biblioteca.negocio.*;
 
@@ -78,10 +79,17 @@ public class Start {
 		UsuarioBean laura = new UsuarioBean();
 		laura.setNombre("Laura");
 		
+			
+		PrestamoBean prestamo1 = new PrestamoBean();
+		prestamo1.setFechaPrestamo("El putísimo 10 de noviembre");
+//		prestamo1.setEjemplar(a1);
+//		prestamo1.setUsuario(laura);
 		
-//		Ejemplar_Usuario prestamo = new Ejemplar_Usuario();
-//		prestamo.setFechaPrestamo("Cojones");
-//		prestamo.setFechaDevolucion("Negros");
+		PrestamoBean prestamo2 = new PrestamoBean();
+		prestamo2.setFechaPrestamo("El putísimo 28 de abril");
+//		prestamo2.setEjemplar(hp11);
+//		prestamo2.setUsuario(olmo);
+		
 		
 		
 		/*
@@ -105,11 +113,18 @@ public class Start {
 		harrypotter3.addEjemplar(hp31);
 		autoestopista.addEjemplar(a1);
 		
-		paco.addEjemplar(hp11);
-		paco.addEjemplar(hp31);
-		olmo.addEjemplar(hp21);
-		laura.addEjemplar(a1);
-		laura.addEjemplar(q1);
+		
+		q1.addPrestamo(prestamo1);
+		hp11.addPrestamo(prestamo2);
+		laura.addPrestamo(prestamo1);
+		olmo.addPrestamo(prestamo2);
+		
+		
+//		paco.addEjemplar(hp11);
+//		paco.addEjemplar(hp31);
+//		olmo.addEjemplar(hp21);
+//		laura.addEjemplar(a1);
+//		laura.addEjemplar(q1);
 //		
 		
 		
@@ -133,6 +148,7 @@ public class Start {
 		createAutor.create(douglas);
 		createAutor.create(jkrowling);
 		
+		
 //		CreateEjemplares_Usuarios createPrestamo = new CreateEjemplares_Usuarios();
 //		createPrestamo.create(prestamo);
 		
@@ -145,11 +161,18 @@ public class Start {
 //		createEjemplar.create(hp13);
 //		createEjemplar.create(hp12);
 //		createEjemplar.create(hp11);
-//		
+////		
+
+		
+		
 		CreateUsuario createUsuario = new CreateUsuario();
 		createUsuario.create(laura);
 		createUsuario.create(olmo);
 		createUsuario.create(paco);
+		
+		CreatePrestamo createPrestamo = new CreatePrestamo();
+		createPrestamo.create(prestamo1);
+		createPrestamo.create(prestamo2);
 		
 		
 		
