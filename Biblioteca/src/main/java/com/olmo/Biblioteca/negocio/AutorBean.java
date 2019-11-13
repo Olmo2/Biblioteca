@@ -29,7 +29,7 @@ public class AutorBean {
 	private String nombre;
 	
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<LibroBean> libros = new ArrayList<LibroBean>();
 	
 	/*METODO ADD EMN LA CLASE LIBROBEAN*/

@@ -1,5 +1,7 @@
 package com.olmo.Biblioteca.negocio;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,19 +17,30 @@ import javax.persistence.Table;
 @Entity
 @Table(name="prestamos")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class PrestamoBean {
+public class PrestamoBean implements Serializable {
+
+	
+	
+	
+	
+//	@Id
+//	@GeneratedValue(strategy= GenerationType.AUTO)
+//	private long idPrestamo;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long idPrestamo;
-	
-	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private UsuarioBean usuario;
 	
+	@Id
 	@ManyToOne(cascade=CascadeType.ALL)
 	private EjemplarBean ejemplar;
 	
+	@Id
 	@Column(name="fecha_prestamo")
 	private String fechaPrestamo;
 	

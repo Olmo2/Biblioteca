@@ -136,12 +136,22 @@ public class Start {
 		 * **************************************************
 		 */
 		
-		CreateLibro createLibro = new CreateLibro();
-		createLibro.create(autoestopista);
-		createLibro.create(quijote);
-		createLibro.create(harrypotter1);
-		createLibro.create(harrypotter2);
-		createLibro.create(harrypotter3);
+		
+		/*
+		 * 
+		 * COMO HAY UN ALL EN AUTORBEAN NO LO PERSISTO
+		 * 
+		 * 
+		 * */
+		
+		
+		
+//		CreateLibro createLibro = new CreateLibro();
+//		createLibro.create(autoestopista);
+//		createLibro.create(quijote);
+//		createLibro.create(harrypotter1);
+//		createLibro.create(harrypotter2);
+//		createLibro.create(harrypotter3);
 		
 		CreateAutor createAutor = new CreateAutor();
 		createAutor.create(cervantes);
@@ -149,18 +159,16 @@ public class Start {
 		createAutor.create(jkrowling);
 		
 		
-//		CreateEjemplares_Usuarios createPrestamo = new CreateEjemplares_Usuarios();
-//		createPrestamo.create(prestamo);
 		
 		
-//		CreateEjemplar createEjemplar = new CreateEjemplar();
-//		createEjemplar.create(a1);
-//		createEjemplar.create(q1);
-//		createEjemplar.create(hp31);
-//		createEjemplar.create(hp21);
-//		createEjemplar.create(hp13);
-//		createEjemplar.create(hp12);
-//		createEjemplar.create(hp11);
+		CreateEjemplar createEjemplar = new CreateEjemplar();
+		createEjemplar.create(a1);
+		createEjemplar.create(q1);
+		createEjemplar.create(hp31);
+		createEjemplar.create(hp21);
+		createEjemplar.create(hp13);
+		createEjemplar.create(hp12);
+		createEjemplar.create(hp11);
 ////		
 
 		
